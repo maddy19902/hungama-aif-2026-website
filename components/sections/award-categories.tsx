@@ -80,10 +80,10 @@ export default function AwardCategories() {
       <div className="max-w-7xl mx-auto">
         <div className={`mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <h2 className="text-3xl md:text-5xl font-light leading-tight md:leading-tight text-white mb-4">
-            Award Categories
+            Film Categories
           </h2>
           <p className="text-sm md:text-base font-light text-zinc-400">
-            Explore the disciplines that define creative excellence
+            Showcasing visionary films at the forefront of AI-driven storytelling.
           </p>
         </div>
 

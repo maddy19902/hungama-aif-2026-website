@@ -6,48 +6,52 @@ import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 export default function Jury() {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
 
-  const jurors = [
-    { name: 'Sanjay Leela', title: 'Director', initials: 'SL' },
-    { name: 'Priyanka Seth', title: 'Strategist', initials: 'PS' },
-    { name: 'Rahul Khurana', title: 'Cinematographer', initials: 'RK' },
-    { name: 'Asha Parekh', title: 'Producer', initials: 'AP' },
-    { name: 'Vikram Singh', title: 'Technologist', initials: 'VS' },
-    { name: 'Ananya Verma', title: 'Sound Designer', initials: 'AV' },
-    { name: 'Deepak Choudhury', title: 'Editor', initials: 'DC' },
-    { name: 'Meera Bhat', title: 'Screenwriter', initials: 'MB' },
-    { name: 'Arjun Nair', title: 'VFX Director', initials: 'AN' },
-    { name: 'Nisha Gupta', title: 'Composer', initials: 'NG' },
-    { name: 'Rohan Kapoor', title: 'Photographer', initials: 'RK' },
-    { name: 'Divya Sharma', title: 'Creative Lead', initials: 'DS' },
-    { name: 'Zara Khan', title: 'Animator', initials: 'ZK' },
-    { name: 'Samir Das', title: 'Colorist', initials: 'SD' },
-    { name: 'Pooja Malhotra', title: 'Casting Director', initials: 'PM' },
-    { name: 'Aditya Verma', title: 'Composer', initials: 'AV' },
-    { name: 'Kavya Singh', title: 'Production', initials: 'KS' },
-    { name: 'Nikhil Roy', title: 'Innovation', initials: 'NR' },
+  const juryMembers = [
+    { name: 'Ajay Devgn', designation: 'Actor, Producer & Filmmaker', image: 'ajay-devgn.jpg', active: true },
+    { name: 'Bhushan Kumar', designation: 'Chairman, T-Series', image: 'bhushan_kumar.jpg', active: true },
+    { name: 'Ralph Simon', designation: 'Chairman, Mobilium', image: 'ralph_simon.jpg', active: true },
+    { name: 'Ty Roberts', designation: 'Eminent Media Technologist', image: 'ty_roberts.jpg', active: true },
+    { name: 'Siddharth Anand', designation: 'Filmmaker, Director & Producer', image: 'siddharth_anand.jpg', active: true },
+    { name: 'Om Raut', designation: 'Filmmaker, Director & Writer', image: 'om_raut.jpg', active: true },
+    { name: 'Riteish Deshmukh', designation: 'Actor, Producer & Filmmaker', image: 'riteish_deshmukh.jpg', active: true },
+    { name: 'Ashish Chaudhary', designation: 'Actor', image: 'ashish_chaudhary.jpg', active: true },
+    { name: 'Sulaiman Merchant', designation: 'Musician & Producer', image: 'sulaiman_merchant.jpg', active: true },
+    { name: 'Madhur Bhandarkar', designation: 'Filmmaker, Director & Producer', image: 'Madhur_Bhandarkar.jpg', active: true },
+    { name: 'Ken Ghosh', designation: 'Film Director', image: 'ken_ghosh.jpg', active: true },
+    { name: 'Kailash Surendranath', designation: 'Filmmaker, Director & Producer', image: 'kailash_s.jpg', active: true },
+
+    // FUTURE JURY MEMBERS (INACTIVE)
+    // { name: 'Future Member 13', designation: 'Role', image: 'placeholder.jpg', active: false },
+    // { name: 'Future Member 14', designation: 'Role', image: 'placeholder.jpg', active: false },
+    // { name: 'Future Member 15', designation: 'Role', image: 'placeholder.jpg', active: false },
+    // { name: 'Future Member 16', designation: 'Role', image: 'placeholder.jpg', active: false },
+    // { name: 'Future Member 17', designation: 'Role', image: 'placeholder.jpg', active: false },
+    // { name: 'Future Member 18', designation: 'Role', image: 'placeholder.jpg', active: false },
   ];
+
+  const activeJurors = juryMembers.filter(juror => juror.active);
 
   // Editorial collage pattern - asymmetric Masonry-like layout
   const getCollageSize = (index: number) => {
     const patterns = [
-      { w: 'md:col-span-2 md:row-span-2', h: 'h-40 md:h-72', accent: 'blue' },
-      { w: 'md:col-span-1 md:row-span-1', h: 'h-40 md:h-48', accent: 'orange' },
-      { w: 'md:col-span-1 md:row-span-1', h: 'h-40 md:h-48', accent: 'lime' },
-      { w: 'md:col-span-1 md:row-span-2', h: 'h-40 md:h-72', accent: 'blue' },
-      { w: 'md:col-span-2 md:row-span-1', h: 'h-40 md:h-48', accent: 'orange' },
-      { w: 'md:col-span-1 md:row-span-1', h: 'h-40 md:h-48', accent: 'lime' },
-      { w: 'md:col-span-1 md:row-span-1', h: 'h-40 md:h-48', accent: 'blue' },
-      { w: 'md:col-span-2 md:row-span-1', h: 'h-40 md:h-48', accent: 'orange' },
-      { w: 'md:col-span-1 md:row-span-1', h: 'h-40 md:h-48', accent: 'lime' },
-      { w: 'md:col-span-1 md:row-span-1', h: 'h-40 md:h-48', accent: 'blue' },
-      { w: 'md:col-span-2 md:row-span-1', h: 'h-40 md:h-48', accent: 'orange' },
-      { w: 'md:col-span-1 md:row-span-1', h: 'h-40 md:h-48', accent: 'lime' },
-      { w: 'md:col-span-1 md:row-span-1', h: 'h-40 md:h-48', accent: 'blue' },
-      { w: 'md:col-span-1 md:row-span-1', h: 'h-40 md:h-48', accent: 'orange' },
-      { w: 'md:col-span-2 md:row-span-2', h: 'h-40 md:h-72', accent: 'lime' },
-      { w: 'md:col-span-1 md:row-span-1', h: 'h-40 md:h-48', accent: 'blue' },
-      { w: 'md:col-span-1 md:row-span-1', h: 'h-40 md:h-48', accent: 'orange' },
-      { w: 'md:col-span-1 md:row-span-1', h: 'h-40 md:h-48', accent: 'lime' },
+      { w: 'md:col-span-2 md:row-span-2', h: 'h-44 md:h-80', accent: 'blue' },
+      { w: 'md:col-span-1 md:row-span-1', h: 'h-44 md:h-56', accent: 'orange' },
+      { w: 'md:col-span-1 md:row-span-1', h: 'h-44 md:h-56', accent: 'lime' },
+      { w: 'md:col-span-1 md:row-span-2', h: 'h-44 md:h-80', accent: 'blue' },
+      { w: 'md:col-span-2 md:row-span-1', h: 'h-44 md:h-56', accent: 'orange' },
+      { w: 'md:col-span-1 md:row-span-1', h: 'h-44 md:h-56', accent: 'lime' },
+      { w: 'md:col-span-1 md:row-span-1', h: 'h-44 md:h-56', accent: 'blue' },
+      { w: 'md:col-span-2 md:row-span-1', h: 'h-44 md:h-56', accent: 'orange' },
+      { w: 'md:col-span-1 md:row-span-1', h: 'h-44 md:h-56', accent: 'lime' },
+      { w: 'md:col-span-1 md:row-span-1', h: 'h-44 md:h-56', accent: 'blue' },
+      { w: 'md:col-span-2 md:row-span-1', h: 'h-44 md:h-56', accent: 'orange' },
+      { w: 'md:col-span-1 md:row-span-1', h: 'h-44 md:h-56', accent: 'lime' },
+      { w: 'md:col-span-1 md:row-span-1', h: 'h-44 md:h-56', accent: 'blue' },
+      { w: 'md:col-span-1 md:row-span-1', h: 'h-44 md:h-56', accent: 'orange' },
+      { w: 'md:col-span-2 md:row-span-2', h: 'h-44 md:h-80', accent: 'lime' },
+      { w: 'md:col-span-1 md:row-span-1', h: 'h-44 md:h-56', accent: 'blue' },
+      { w: 'md:col-span-1 md:row-span-1', h: 'h-44 md:h-56', accent: 'orange' },
+      { w: 'md:col-span-1 md:row-span-1', h: 'h-44 md:h-56', accent: 'lime' },
     ];
     return patterns[index % patterns.length];
   };
@@ -66,20 +70,20 @@ export default function Jury() {
       <div className="max-w-7xl mx-auto">
         <div className={`mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <h2 className="text-3xl md:text-5xl font-light leading-tight text-white mb-4">
-            The Council
+            Creative Council
           </h2>
           <p className="text-sm md:text-base font-light text-zinc-400">
-            Industry titans guiding the future of creative excellence
+            Visionary filmmakers, producers, and media leaders shaping the future of cinema and storytelling.
           </p>
         </div>
 
         {/* Editorial Collage - True Masonry Layout */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-max">
-          {jurors.map((juror, index) => {
+          {activeJurors.map((juror, index) => {
             const sizing = getCollageSize(index);
             return (
               <div
-                key={index}
+                key={juror.name}
                 className={`${sizing.w} ${sizing.h} group relative overflow-hidden rounded-lg cursor-pointer transition-all duration-700 ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
@@ -87,8 +91,12 @@ export default function Jury() {
                 }`}
                 style={{ transitionDelay: isVisible ? `${Math.min(index * 40, 600)}ms` : '0ms' }}
               >
-                {/* Background placeholder */}
-                <div className="absolute inset-0 bg-gradient-to-br from-zinc-800/70 via-zinc-900/50 to-black border border-zinc-800" />
+                {/* Jury member image */}
+                <img
+                  src={`/images/jury/${juror.image}`}
+                  alt={`${juror.name} – ${juror.designation}`}
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                />
 
                 {/* Vignette overlay with brand color */}
                 <div
@@ -96,20 +104,16 @@ export default function Jury() {
                   style={{ background: getVignette(sizing.accent) }}
                 />
 
-                {/* Initials display - center */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-4xl md:text-6xl font-light text-zinc-700 group-hover:text-zinc-500 transition-colors duration-300">
-                    {juror.initials}
-                  </span>
-                </div>
+                {/* Dark overlay for text readability */}
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-300" />
 
-                {/* Name and title overlay - bottom */}
+                {/* Name and designation overlay - bottom */}
                 <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5 bg-gradient-to-t from-black via-black/90 to-transparent z-10">
                   <h3 className="text-xs md:text-sm font-semibold text-white leading-tight mb-0.5">
                     {juror.name}
                   </h3>
                   <p className="text-xs font-light text-zinc-400">
-                    {juror.title}
+                    {juror.designation}
                   </p>
                 </div>
 

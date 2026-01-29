@@ -16,9 +16,23 @@ export default function Hero({ opacity, onSubmitClick }: HeroProps) {
         transition: 'background 0.1s ease-out',
       }}
     >
-      {/* Background gradient overlay - multiple color blooms */}
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/images/YT_BG_Vid.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+
+      {/* Fallback gradient overlay */}
       <div
-        className="absolute inset-0 opacity-40"
+        className="absolute inset-0 opacity-40 pointer-events-none"
         style={{
           background: `
             radial-gradient(circle at 30% 50%, rgba(79, 150, 220, 0.12) 0%, transparent 40%),
@@ -36,20 +50,20 @@ export default function Hero({ opacity, onSubmitClick }: HeroProps) {
           </p>
         </div>
 
-        {/* Main headline - responsive sizing */}
+        {/* Main headline - reduced dominance */}
         <h1 className="mb-4 md:mb-6">
-          <div className="text-4xl md:text-7xl lg:text-8xl font-light leading-tight md:leading-none text-white">
-            Defining
+          <div className="text-3xl md:text-6xl lg:text-7xl font-light leading-tight md:leading-none text-white">
+            HUNGAMA
           </div>
-          <div className="text-5xl md:text-8xl lg:text-9xl font-black italic leading-tight md:leading-none text-white">
-            Excellence
+          <div className="text-3xl md:text-6xl lg:text-7xl font-black italic leading-tight md:leading-none text-white">
+            AI FILM FESTIVAL
           </div>
         </h1>
 
         {/* Supporting line */}
         <div className="mt-8 md:mt-12 mb-12 md:mb-16 max-w-2xl">
           <p className="text-sm md:text-base font-light text-zinc-300 leading-relaxed">
-            Celebrating innovation, creativity, and the artists shaping tomorrow's world
+            Celebrating the Future of Storytelling
           </p>
         </div>
 
@@ -69,25 +83,33 @@ export default function Hero({ opacity, onSubmitClick }: HeroProps) {
           </svg>
         </button>
 
-        {/* Award categories preview - minimal */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm font-light text-zinc-400">
-          <span>PRESENTED PARTNERS</span>
-          <span className="hidden md:inline">•</span>
-          <a href="#" className="hover:text-white transition-colors">
-            CreatiCities
-          </a>
-          <span className="hidden md:inline">•</span>
-          <a href="#" className="hover:text-white transition-colors">
-            TRIBECA
-          </a>
-          <span className="hidden md:inline">•</span>
-          <a href="#" className="hover:text-white transition-colors">
-            NETFLIX
-          </a>
-          <span className="hidden md:inline">•</span>
-          <a href="#" className="hover:text-white transition-colors">
-            Outdoor Boots
-          </a>
+        {/* Presenting Partners Logo Strip */}
+        <div className="flex flex-col items-center gap-3 md:gap-4">
+          <p className="text-xs md:text-sm font-light tracking-[0.2em] text-zinc-500 uppercase">
+            PRESENTING PARTNERS:
+          </p>
+          {/* <div className="flex items-center justify-center gap-6 md:gap-8">
+            <img
+              src="/images/sponsors/ai-summit-logo-copy.png"
+              alt="India AI Impact Summit 2026 logo"
+              className="h-4 md:h-5 w-auto opacity-60 hover:opacity-90 transition-opacity duration-300"
+            />
+            <img
+              src="/images/sponsors/bh_logo-copy.png"
+              alt="Bollywood Hungama logo"
+              className="h-4 md:h-5 w-auto opacity-60 hover:opacity-90 transition-opacity duration-300"
+            />
+            <img
+              src="/images/sponsors/meit_logo-copy.png"
+              alt="Ministry of Electronics and Information Technology logo"
+              className="h-4 md:h-5 w-auto opacity-60 hover:opacity-90 transition-opacity duration-300"
+            />
+            <img
+              src="/images/sponsors/nvidia_wbg-copy.png"
+              alt="NVIDIA logo"
+              className="h-4 md:h-5 w-auto opacity-60 hover:opacity-90 transition-opacity duration-300"
+            />
+          </div> */}
         </div>
       </div>
 
@@ -111,8 +133,14 @@ export default function Hero({ opacity, onSubmitClick }: HeroProps) {
         </svg>
       </div>
 
-      {/* Fade to black gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-black pointer-events-none" />
+      {/* Fade to black gradient - eased */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-black pointer-events-none"
+        style={{
+          height: '40%',
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,1) 100%)',
+        }}
+      />
     </section>
   );
 }
