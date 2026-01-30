@@ -39,7 +39,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative w-full overflow-hidden bg-black">
+    <main className="relative w-full overflow-hidden">
       <Header onSubmitClick={() => setSubmitModalOpen(true)} onContactClick={() => setContactModalOpen(true)} />
       <SubmitEntryModal isOpen={submitModalOpen} onClose={() => setSubmitModalOpen(false)} />
       <ContactModal isOpen={contactModalOpen} onClose={() => setContactModalOpen(false)} />

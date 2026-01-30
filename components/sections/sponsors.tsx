@@ -29,7 +29,7 @@ export default function Sponsors() {
               <img
                 src={sponsor.src}
                 alt={`${sponsor.name} logo`}
-                className="h-5 md:h-7 w-auto"
+                className="h-10 md:h-12 w-auto"
               />
             </div>
           ))}

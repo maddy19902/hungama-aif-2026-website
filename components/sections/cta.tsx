@@ -14,8 +14,7 @@ export default function CTA({ onSubmitClick }: CTAProps) {
     <section ref={ref} className={`w-full py-16 md:py-24 px-4 md:px-8 bg-black transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
       <div className="max-w-4xl mx-auto">
         <div className="relative p-8 md:p-16 rounded-xl overflow-hidden">
-          {/* Background gradient with Hungama brand colors */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[rgba(79,150,220,0.12)] via-[rgba(220,100,50,0.08)] to-black rounded-xl" />
+          {/* Background - solid black */}
 
           {/* Border with subtle brand accent */}
           <div className="absolute inset-0 border border-[rgba(79,150,220,0.25)] rounded-xl" />

@@ -55,12 +55,8 @@ export default function AwardCategories() {
   };
 
   const getVignette = (accent: string) => {
-    const vignettes = {
-      blue: 'radial-gradient(ellipse at center, rgba(79, 150, 220, 0.08) 0%, transparent 65%)',
-      orange: 'radial-gradient(ellipse at center, rgba(220, 100, 50, 0.08) 0%, transparent 65%)',
-      lime: 'radial-gradient(ellipse at center, rgba(150, 200, 50, 0.08) 0%, transparent 65%)',
-    };
-    return vignettes[accent as keyof typeof vignettes];
+    // No ambient gradients - solid backgrounds only
+    return 'transparent';
   };
 
   return (

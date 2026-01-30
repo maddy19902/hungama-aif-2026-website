@@ -11,10 +11,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <h3 className="text-sm md:text-base font-light tracking-widest text-white uppercase mb-6">
-              AIF 2026
+              Hungama AI Film Festival
             </h3>
             <p className="text-xs md:text-sm font-light text-zinc-400">
-              Defining Excellence. A global platform celebrating creative innovation and artistic vision.
+              Celebrating the Future of Storytelling
             </p>
           </div>
 
@@ -54,25 +54,25 @@ export default function Footer() {
             </p>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-xs md:text-sm font-light text-zinc-400 hover:text-white transition-colors">
-                  Instagram
+                <a href="https://www.facebook.com/share/1EFcmfd9ih/" className="text-xs md:text-sm font-light text-zinc-400 hover:text-white transition-colors">
+                  Facebook
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#" className="text-xs md:text-sm font-light text-zinc-400 hover:text-white transition-colors">
                   Twitter
                 </a>
-              </li>
+              </li> */}
               <li>
-                <a href="#" className="text-xs md:text-sm font-light text-zinc-400 hover:text-white transition-colors">
+                <a href="https://www.linkedin.com/company/hungama-digital-media-entertainment-pvt-ltd-/" className="text-xs md:text-sm font-light text-zinc-400 hover:text-white transition-colors">
                   LinkedIn
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#" className="text-xs md:text-sm font-light text-zinc-400 hover:text-white transition-colors">
                   YouTube
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -84,14 +84,14 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a href="mailto:hello@aif2026.com" className="text-xs md:text-sm font-light text-zinc-400 hover:text-white transition-colors">
-                  hello@aif2026.com
+                  awards@hungama.com
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="tel:+1234567890" className="text-xs md:text-sm font-light text-zinc-400 hover:text-white transition-colors">
                   +1 (555) Awards
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
@@ -112,7 +112,7 @@ export default function Footer() {
               Cookies
             </a>
           </div>
-          <p>© 2026 AI Festival by Hungama. All rights reserved.</p>
+          <p>© 2026 AI Film Festival by Hungama. All rights reserved.</p>
         </div>
       </div>
     </footer>

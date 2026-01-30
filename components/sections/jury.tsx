@@ -70,10 +70,10 @@ export default function Jury() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 md:mb-16">
           <h2 className="text-2xl md:text-4xl font-light leading-tight text-white mb-4">
-            Creative Council
+            The Creative Council
           </h2>
           <p className="text-sm md:text-base font-light text-zinc-400">
-            Visionary filmmakers, producers, and media leaders shaping the future of cinema and storytelling.
+            A distinguished collective of India’s most influential filmmakers, music producers, advertising and media leaders
           </p>
         </div>
 
@@ -138,12 +138,12 @@ export default function Jury() {
           })}
         </div>
 
-        {/* Bottom note */}
+        {/* Bottom note
         <div className={`mt-12 md:mt-16 p-6 md:p-8 card-dark rounded-lg border border-zinc-800 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: isVisible ? '400ms' : '0ms' }}>
           <p className="text-sm md:text-base font-light text-zinc-300">
             <span className="font-semibold text-white">Jury Expertise:</span> Spanning direction, cinematography, sound design, visual effects, screenwriting, production, technology, and emerging innovation
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

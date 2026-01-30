@@ -29,15 +29,11 @@ export default function Hero({ opacity, onSubmitClick }: HeroProps) {
         <source src="/images/YT_BG_Vid.webm" type="video/webm" />
       </video>
 
-      {/* Fallback gradient overlay */}
+      {/* Fallback solid overlay */}
       <div
         className="absolute inset-0 opacity-40 pointer-events-none"
         style={{
-          background: `
-            radial-gradient(circle at 30% 50%, rgba(79, 150, 220, 0.12) 0%, transparent 40%),
-            radial-gradient(circle at 70% 30%, rgba(220, 100, 50, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 50% 100%, rgba(150, 200, 50, 0.06) 0%, transparent 60%)
-          `,
+          background: `rgba(0, 0, 0, 1)`,
         }}
       />
 
@@ -51,17 +47,17 @@ export default function Hero({ opacity, onSubmitClick }: HeroProps) {
 
         {/* Main headline - renders instantly */}
         <h1 className="mb-4 md:mb-6">
-          <div className="text-3xl md:text-6xl lg:text-7xl font-light leading-tight md:leading-none text-white">
+          <span className="block text-3xl md:text-6xl lg:text-7xl font-bold leading-tight md:leading-none text-gradient-hungama">
             HUNGAMA
-          </div>
-          <div className="text-3xl md:text-6xl lg:text-7xl font-black italic leading-tight md:leading-none text-white">
+          </span>
+          <div className="text-3xl md:text-6xl lg:text-7xl font-bold italic leading-tight md:leading-none text-white">
             AI FILM FESTIVAL
           </div>
         </h1>
 
         {/* Supporting line - renders instantly */}
-        <div className="mt-8 md:mt-12 mb-12 md:mb-16 max-w-2xl">
-          <p className="text-sm md:text-base font-light text-zinc-300 leading-relaxed">
+        <div className="mt-8 md:mt-12 mb-16 md:mb-24 max-w-2xl">
+          <p className="text-base md:text-lg font-light text-zinc-300 leading-relaxed">
             Celebrating the Future of Storytelling
           </p>
         </div>
@@ -83,7 +79,7 @@ export default function Hero({ opacity, onSubmitClick }: HeroProps) {
         </button>
 
         {/* Presenting Partners Logo Strip */}
-        <div className="flex flex-col items-center gap-3 md:gap-4">
+        <div className="flex flex-col items-center gap-2 md:gap-3">
           <p className="text-xs md:text-sm font-light tracking-[0.2em] text-zinc-500 uppercase">
             PRESENTING PARTNERS:
           </p>

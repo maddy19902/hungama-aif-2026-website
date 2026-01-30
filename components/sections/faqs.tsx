@@ -105,16 +105,16 @@ export default function FAQs() {
       ],
     },
     {
-      category: 'Submission Process & Fees',
+      category: 'Submission Process',
       items: [
         {
           question: 'How do I submit my film?',
           answer: 'Creators must register on the official website, upload their film or screener link, complete disclosure forms, and accept the festival terms.',
         },
-        {
-          question: 'Is there a submission fee?',
-          answer: 'Submission fee details will be announced on the official festival website.',
-        },
+        // {
+        //   question: 'Is there a submission fee?',
+        //   answer: 'Submission fee details will be announced on the official festival website.',
+        // },
         {
           question: 'Can I edit or replace my film after submission?',
           answer: 'Once submitted, films generally cannot be replaced unless explicitly permitted.',

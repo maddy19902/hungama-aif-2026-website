@@ -12,10 +12,7 @@ export default function AwardPrizes() {
       <div
         className="absolute inset-0 pointer-events-none opacity-45"
         style={{
-          background: `
-            radial-gradient(ellipse 500px 350px at 40% 50%, rgba(79, 150, 220, 0.08) 0%, transparent 50%),
-            radial-gradient(ellipse 450px 300px at 60% 30%, rgba(220, 100, 50, 0.06) 0%, transparent 50%)
-          `,
+            background: `transparent`,
         }}
       />
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -35,12 +32,12 @@ export default function AwardPrizes() {
           {/* Grand Prize - Flagship */}
           <div className={`group transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: isVisible ? '100ms' : '0ms' }}>
             <div className="relative p-8 md:p-12 card-dark rounded-xl border-2 border-blue-500/20 group-hover:border-blue-500/50 transition-all duration-300">
-              <div className="absolute -top-4 left-4 md:left-6 px-3 py-1 bg-gradient-primary rounded-full">
+              <div className="absolute -top-4 left-4 md:left-6 px-3 py-1 bg-blue-500 rounded-full">
                 <p className="text-xs font-semibold text-white">FLAGSHIP</p>
               </div>
 
               <div className="mt-6 md:mt-8">
-                <h3 className="text-2xl md:text-3xl font-light text-white mb-6">
+                <h3 className="text-2xl md:text-2xl font-semibold text-white mb-6">
                   Grand Prize
                 </h3>
 
@@ -70,28 +67,28 @@ export default function AwardPrizes() {
               </div>
 
               <div className="mt-6 md:mt-8">
-                <h3 className="text-xl md:text-2xl font-light text-white mb-6">
-                  Award Benefits
+                <h3 className="text-2xl md:text-2xl font-semibold text-white mb-6">
+                  Partner Prizes
                 </h3>
 
-                <div className="space-y-6">
-                  <div>
-                    <p className="text-sm font-semibold text-white mb-2">Compute Credits</p>
-                    <p className="text-sm font-light text-zinc-400">Cloud rendering and processing resources</p>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white mb-2">Software Licenses</p>
-                    <p className="text-sm font-light text-zinc-400">Professional creative tools and plugins</p>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white mb-2">Hardware & Cloud Grants</p>
-                    <p className="text-sm font-light text-zinc-400">Equipment and infrastructure support</p>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white mb-2">Global Showcase</p>
-                    <p className="text-sm font-light text-zinc-400">International festival placement and distribution</p>
-                  </div>
-                </div>
+                <ul className="space-y-3 text-sm font-light text-zinc-300">
+                  <li className="flex items-start gap-3">
+                    <span className="text-purple-400 mt-0.5 flex-shrink-0">✓</span>
+                    <span>Compute Credits — Cloud rendering and processing resources</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-purple-400 mt-0.5 flex-shrink-0">✓</span>
+                    <span>Software Licenses — Professional creative tools and plugins</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-purple-400 mt-0.5 flex-shrink-0">✓</span>
+                    <span>Hardware & Cloud Grants — Equipment and infrastructure support</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-purple-400 mt-0.5 flex-shrink-0">✓</span>
+                    <span>Global Showcase — International festival placement and distribution</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
