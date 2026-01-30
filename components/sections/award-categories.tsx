@@ -1,55 +1,43 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useScrollReveal } from '@/hooks/use-scroll-reveal';
+import { useInViewReveal } from '@/hooks/useInViewReveal';
 
 export default function AwardCategories() {
-  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
+  const { ref, isVisible } = useInViewReveal({ threshold: 0.1 });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const categories = [
     {
-      title: 'Direction',
-      icon: '▶',
-      criteria: 'Innovative directorial vision',
-      count: '24 Submissions',
+      title: 'Grand Prix – Best AI Film',
+      icon: '🏆',
+      criteria: 'AI Short Films (3–15 min). Narrative or experimental. Fiction or non-fiction.',
       brandAccent: 'blue',
     },
     {
-      title: 'Cinematography',
-      icon: '◉',
-      criteria: 'Visual storytelling excellence',
-      count: '19 Submissions',
+      title: 'Best AI Micro Drama',
+      icon: '📱',
+      criteria: '30 sec–3 min. Vertical or horizontal. Episodic pilots allowed.',
       brandAccent: 'orange',
     },
     {
-      title: 'Sound Design',
-      icon: '♪',
-      criteria: 'Immersive audio experience',
-      count: '16 Submissions',
+      title: 'Best AI Music Video',
+      icon: '🎵',
+      criteria: '2–6 min. Original or licensed track (proof required).',
       brandAccent: 'lime',
     },
     {
-      title: 'Screenplay',
-      icon: '✎',
-      criteria: 'Compelling narrative structure',
-      count: '21 Submissions',
+      title: 'Best AI Visual Innovation',
+      icon: '🧪',
+      criteria: 'Experimental or art films. No fixed duration. Visual language innovation.',
       brandAccent: 'blue',
     },
     {
-      title: 'Post-Production',
-      icon: '◈',
-      criteria: 'Technical excellence',
-      count: '14 Submissions',
+      title: 'Jury Special Mention',
+      icon: '⭐',
+      criteria: 'Documentary or factual films (5–20 min). Any language with English subtitles.',
       brandAccent: 'orange',
-    },
-    {
-      title: 'AI Innovation',
-      icon: '⚡',
-      criteria: 'Creative AI integration',
-      count: '32 Submissions',
-      brandAccent: 'lime',
     },
   ];
 
@@ -76,11 +64,11 @@ export default function AwardCategories() {
   };
 
   return (
-    <section ref={ref} id="categories" className="w-full py-16 md:py-24 px-4 md:px-8 bg-black border-t border-zinc-900">
+    <section ref={ref} id="categories" className={`w-full py-16 md:py-24 px-4 md:px-8 bg-black border-t border-zinc-900 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
       <div className="max-w-7xl mx-auto">
-        <div className={`mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <h2 className="text-3xl md:text-5xl font-light leading-tight md:leading-tight text-white mb-4">
-            Film Categories
+        <div className="mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-4xl font-light leading-tight md:leading-tight text-white mb-4">
+            Award Categories
           </h2>
           <p className="text-sm md:text-base font-light text-zinc-400">
             Showcasing visionary films at the forefront of AI-driven storytelling.
@@ -94,12 +82,7 @@ export default function AwardCategories() {
             return (
               <div
                 key={index}
-                className={`${sizing.colSpan} ${sizing.rowSpan} group relative overflow-hidden rounded-lg cursor-pointer transition-all duration-700 ${
-                  isVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-6'
-                }`}
-                style={{ transitionDelay: isVisible ? `${Math.min(index * 60, 500)}ms` : '0ms' }}
+                className={`${sizing.colSpan} ${sizing.rowSpan} group relative overflow-hidden rounded-lg cursor-pointer transition-all duration-700 hover:shadow-lg`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
@@ -146,10 +129,6 @@ export default function AwardCategories() {
                       }`}
                     >
                       {category.criteria}
-                    </p>
-
-                    <p className="text-xs font-light text-zinc-400">
-                      {category.count}
                     </p>
 
                     {/* Bottom accent bar */}

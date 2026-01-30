@@ -1,19 +1,19 @@
 'use client';
 
 import React from 'react';
-import { useScrollReveal } from '@/hooks/use-scroll-reveal';
+import { useInViewReveal } from '@/hooks/useInViewReveal';
 
 interface CTAProps {
   onSubmitClick: () => void;
 }
 
 export default function CTA({ onSubmitClick }: CTAProps) {
-  const { ref, isVisible } = useScrollReveal({ threshold: 0.3 });
+  const { ref, isVisible } = useInViewReveal({ threshold: 0.3 });
 
   return (
-    <section ref={ref} className="w-full py-16 md:py-24 px-4 md:px-8 bg-black border-t border-zinc-900">
+    <section ref={ref} className={`w-full py-16 md:py-24 px-4 md:px-8 bg-black border-t border-zinc-900 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
       <div className="max-w-4xl mx-auto">
-        <div className={`relative p-8 md:p-16 rounded-xl overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+        <div className="relative p-8 md:p-16 rounded-xl overflow-hidden">
           {/* Background gradient with Hungama brand colors */}
           <div className="absolute inset-0 bg-gradient-to-br from-[rgba(79,150,220,0.12)] via-[rgba(220,100,50,0.08)] to-black rounded-xl" />
 

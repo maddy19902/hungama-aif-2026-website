@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { useScrollReveal } from '@/hooks/use-scroll-reveal';
+import { useInViewReveal } from '@/hooks/useInViewReveal';
 
 export default function Manifesto() {
-  const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
+  const { ref, isVisible } = useInViewReveal({ threshold: 0.2 });
 
   return (
     <section id="manifesto" className="relative w-full py-16 md:py-24 px-4 md:px-8 bg-black border-t border-zinc-900 overflow-hidden" ref={ref}>
@@ -26,16 +26,16 @@ export default function Manifesto() {
           </p>
         </div>
 
-        {/* Primary statement - Authority */}
-        <div className={`mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: isVisible ? '50ms' : '0ms' }}>
-          <h2 className="text-3xl md:text-5xl font-light leading-relaxed md:leading-relaxed tracking-tight text-white">
+        {/* Heading block */}
+        <div className={`mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: isVisible ? '100ms' : '0ms' }}>
+          <h2 className="text-2xl md:text-4xl font-light leading-relaxed md:leading-relaxed tracking-tight text-white">
             Merging Hungama's rich heritage in global film culture<br />
             with the cutting-edge precision of AI technology.
           </h2>
         </div>
 
-        {/* Supporting paragraphs - two columns */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: isVisible ? '100ms' : '0ms' }}>
+        {/* Body copy block */}
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: isVisible ? '200ms' : '0ms' }}>
           <div>
             <p className="text-sm md:text-base font-light text-zinc-300 leading-relaxed">
               This is not just a festival; it is cinema reimagined for a new era of intelligence.

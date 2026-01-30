@@ -1,20 +1,13 @@
 'use client';
 
 import React from 'react';
-import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 export default function Footer() {
-  const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
-
   return (
-    <footer ref={ref} className="w-full py-12 md:py-16 px-4 md:px-8 bg-black border-t border-zinc-900">
+    <footer className="w-full py-12 md:py-16 px-4 md:px-8 bg-black border-t border-zinc-900">
       <div className="max-w-6xl mx-auto">
         {/* Main footer grid */}
-        <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16 transition-all duration-700 ${
-          isVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-6'
-        }`}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <h3 className="text-sm md:text-base font-light tracking-widest text-white uppercase mb-6">

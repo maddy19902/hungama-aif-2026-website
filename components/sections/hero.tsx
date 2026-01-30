@@ -22,9 +22,10 @@ export default function Hero({ opacity, onSubmitClick }: HeroProps) {
         muted
         loop
         playsInline
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/images/YT_BG_Vid.mp4" type="video/mp4" />
+        <source src="/images/YT_BG_Vid.webm" type="video/webm" />
       </video>
 
       {/* Dark overlay for readability */}
@@ -44,11 +45,11 @@ export default function Hero({ opacity, onSubmitClick }: HeroProps) {
 
       <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-4xl">
         {/* Subtitle */}
-        <div className="mb-6 md:mb-8">
+        {/* <div className="mb-6 md:mb-8">
           <p className="text-xs md:text-sm font-light tracking-[0.3em] text-zinc-500 uppercase accent-line-blue">
             THE HUNGAMA ARTIST IN FOCUS AWARDS
           </p>
-        </div>
+        </div> */}
 
         {/* Main headline - reduced dominance */}
         <h1 className="mb-4 md:mb-6">

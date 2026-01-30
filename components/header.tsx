@@ -19,8 +19,14 @@ export default function Header({ onSubmitClick, onContactClick }: HeaderProps) {
       setLastScrollY(currentScrollY);
     };
 
+    // Add smooth scroll behavior
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.documentElement.style.scrollBehavior = 'auto';
+    };
   }, [lastScrollY]);
 
   return (

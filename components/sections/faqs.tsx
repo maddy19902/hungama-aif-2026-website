@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useScrollReveal } from '@/hooks/use-scroll-reveal';
+import { useInViewReveal } from '@/hooks/useInViewReveal';
 
 export default function FAQs() {
-  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
+  const { ref, isVisible } = useInViewReveal({ threshold: 0.1 });
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqCategories = [
@@ -195,10 +195,10 @@ export default function FAQs() {
   ];
 
   return (
-    <section ref={ref} className="w-full py-16 md:py-24 px-4 md:px-8 bg-black border-t border-zinc-900">
+    <section ref={ref} className={`w-full py-16 md:py-24 px-4 md:px-8 bg-black border-t border-zinc-900 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
       <div className="max-w-3xl mx-auto">
-        <div className={`mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <h2 className="text-3xl md:text-5xl font-light leading-tight text-white mb-4">
+        <div className="mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-4xl font-light leading-tight text-white mb-4">
             Frequently Asked Questions
           </h2>
           <p className="text-sm md:text-base font-light text-zinc-400">
@@ -210,12 +210,7 @@ export default function FAQs() {
           {faqCategories.map((categoryGroup, index) => (
             <div
               key={index}
-              className={`group border border-zinc-800 rounded-lg overflow-hidden transition-all duration-300 hover:border-zinc-700 ${
-                isVisible
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-6'
-              }`}
-              style={{ transitionDelay: isVisible ? `${Math.min(index * 50, 400)}ms` : '0ms' }}
+              className="group border border-zinc-800 rounded-lg overflow-hidden transition-all duration-300 hover:border-zinc-700"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}

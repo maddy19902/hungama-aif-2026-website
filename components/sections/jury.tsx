@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { useScrollReveal } from '@/hooks/use-scroll-reveal';
+import { useInViewReveal } from '@/hooks/useInViewReveal';
 
 export default function Jury() {
-  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
+  const { ref, isVisible } = useInViewReveal({ threshold: 0.1 });
 
   const juryMembers = [
     { name: 'Ajay Devgn', designation: 'Actor, Producer & Filmmaker', image: 'ajay-devgn.jpg', active: true },
@@ -66,10 +66,10 @@ export default function Jury() {
   };
 
   return (
-    <section ref={ref} id="council" className="w-full py-16 md:py-24 px-4 md:px-8 bg-black border-t border-zinc-900">
+    <section ref={ref} id="council" className={`w-full py-16 md:py-24 px-4 md:px-8 bg-black border-t border-zinc-900 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
       <div className="max-w-7xl mx-auto">
-        <div className={`mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <h2 className="text-3xl md:text-5xl font-light leading-tight text-white mb-4">
+        <div className="mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-4xl font-light leading-tight text-white mb-4">
             Creative Council
           </h2>
           <p className="text-sm md:text-base font-light text-zinc-400">
@@ -84,18 +84,15 @@ export default function Jury() {
             return (
               <div
                 key={juror.name}
-                className={`${sizing.w} ${sizing.h} group relative overflow-hidden rounded-lg cursor-pointer transition-all duration-700 ${
-                  isVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-8'
-                }`}
-                style={{ transitionDelay: isVisible ? `${Math.min(index * 40, 600)}ms` : '0ms' }}
+                  className={`${sizing.w} ${sizing.h} group relative overflow-hidden rounded-lg cursor-pointer transition-all duration-700`}
               >
                 {/* Jury member image */}
                 <img
                   src={`/images/jury/${juror.image}`}
                   alt={`${juror.name} – ${juror.designation}`}
                   className="absolute inset-0 w-full h-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 {/* Vignette overlay with brand color */}
