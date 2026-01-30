@@ -8,28 +8,26 @@ interface HeroProps {
 }
 
 export default function Hero({ opacity, onSubmitClick }: HeroProps) {
+
   return (
     <section
-      className="relative w-full min-h-[75vh] md:min-h-[80vh] flex flex-col items-center justify-center px-4 py-20 md:py-0 overflow-hidden mt-16"
+      className="relative w-full h-screen flex flex-col items-center justify-center px-4 overflow-hidden"
       style={{
         background: `rgba(0, 0, 0, ${1 - opacity * 0.3})`,
         transition: 'background 0.1s ease-out',
       }}
     >
-      {/* Background video */}
+      {/* Background video - loads immediately after hero text */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/images/YT_BG_Vid.webm" type="video/webm" />
       </video>
-
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
 
       {/* Fallback gradient overlay */}
       <div
@@ -51,7 +49,7 @@ export default function Hero({ opacity, onSubmitClick }: HeroProps) {
           </p>
         </div> */}
 
-        {/* Main headline - reduced dominance */}
+        {/* Main headline - renders instantly */}
         <h1 className="mb-4 md:mb-6">
           <div className="text-3xl md:text-6xl lg:text-7xl font-light leading-tight md:leading-none text-white">
             HUNGAMA
@@ -61,14 +59,14 @@ export default function Hero({ opacity, onSubmitClick }: HeroProps) {
           </div>
         </h1>
 
-        {/* Supporting line */}
+        {/* Supporting line - renders instantly */}
         <div className="mt-8 md:mt-12 mb-12 md:mb-16 max-w-2xl">
           <p className="text-sm md:text-base font-light text-zinc-300 leading-relaxed">
             Celebrating the Future of Storytelling
           </p>
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button - renders instantly */}
         <button
           onClick={onSubmitClick}
           className="mb-16 md:mb-24 px-6 md:px-8 py-3 md:py-4 bg-gradient-primary text-white font-semibold text-sm md:text-base rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center gap-2"

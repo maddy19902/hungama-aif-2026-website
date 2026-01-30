@@ -66,7 +66,7 @@ export default function Jury() {
   };
 
   return (
-    <section ref={ref} id="council" className={`w-full py-16 md:py-24 px-4 md:px-8 bg-black border-t border-zinc-900 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+    <section ref={ref} id="council" className={`w-full py-16 md:py-24 px-4 md:px-8 bg-black transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 md:mb-16">
           <h2 className="text-2xl md:text-4xl font-light leading-tight text-white mb-4">

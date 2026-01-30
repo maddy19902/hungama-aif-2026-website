@@ -1,12 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import dynamic from 'next/dynamic';
 import Header from '@/components/header';
-
-const Hero = dynamic(() => import('@/components/sections/hero'), {
-  ssr: false,
-});
+import Hero from '@/components/sections/hero';
 import Sponsors from '@/components/sections/sponsors';
 import Manifesto from '@/components/sections/manifesto';
 import AwardCategories from '@/components/sections/award-categories';

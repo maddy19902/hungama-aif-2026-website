@@ -11,7 +11,7 @@ export default function CTA({ onSubmitClick }: CTAProps) {
   const { ref, isVisible } = useInViewReveal({ threshold: 0.3 });
 
   return (
-    <section ref={ref} className={`w-full py-16 md:py-24 px-4 md:px-8 bg-black border-t border-zinc-900 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+    <section ref={ref} className={`w-full py-16 md:py-24 px-4 md:px-8 bg-black transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
       <div className="max-w-4xl mx-auto">
         <div className="relative p-8 md:p-16 rounded-xl overflow-hidden">
           {/* Background gradient with Hungama brand colors */}

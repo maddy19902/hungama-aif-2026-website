@@ -7,7 +7,7 @@ export default function AwardPrizes() {
   const { ref, isVisible } = useInViewReveal({ threshold: 0.2 });
 
   return (
-    <section ref={ref} className="relative w-full py-16 md:py-24 px-4 md:px-8 bg-black border-t border-zinc-900 overflow-hidden">
+    <section ref={ref} className="relative w-full py-16 md:py-24 px-4 md:px-8 bg-black overflow-hidden">
       {/* Ambient color blooms */}
       <div
         className="absolute inset-0 pointer-events-none opacity-45"

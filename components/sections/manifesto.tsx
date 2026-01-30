@@ -7,7 +7,7 @@ export default function Manifesto() {
   const { ref, isVisible } = useInViewReveal({ threshold: 0.2 });
 
   return (
-    <section id="manifesto" className="relative w-full py-16 md:py-24 px-4 md:px-8 bg-black border-t border-zinc-900 overflow-hidden" ref={ref}>
+    <section id="manifesto" className="relative w-full py-16 md:py-24 px-4 md:px-8 bg-black overflow-hidden" ref={ref}>
       {/* Subtle ambient gradients */}
       <div
         className="absolute inset-0 pointer-events-none opacity-20"
@@ -29,8 +29,7 @@ export default function Manifesto() {
         {/* Heading block */}
         <div className={`mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: isVisible ? '100ms' : '0ms' }}>
           <h2 className="text-2xl md:text-4xl font-light leading-relaxed md:leading-relaxed tracking-tight text-white">
-            Merging Hungama's rich heritage in global film culture<br />
-            with the cutting-edge precision of AI technology.
+            Merging Hungama's rich heritage in global film culture with the cutting-edge precision of AI technology.
           </h2>
         </div>
 

@@ -14,7 +14,7 @@ export default function Sponsors() {
   ];
 
   return (
-    <section ref={ref} className={`relative w-full py-8 md:py-12 px-4 md:px-8 bg-black border-t border-zinc-900 overflow-x-auto overflow-y-hidden transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+    <section ref={ref} className={`relative w-full py-8 md:py-12 px-4 md:px-8 bg-black overflow-x-auto overflow-y-hidden transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
       <div className="relative z-10 w-full">
         <div className="flex items-center justify-center gap-8 md:gap-12 lg:gap-16 min-w-max md:min-w-full md:mx-auto">
           {sponsors.map((sponsor, index) => (
