@@ -1,0 +1,13 @@
+OG Image files needed:
+1. og-image.jpg (1200x630) - Main OG image for links
+2. og-image-square.jpg (800x800) - Square format for some platforms  
+3. twitter-image.jpg (1200x675) - Twitter card image
+
+These should feature the Hungama AI Film Festival 2026 branding with:
+- Festival name prominently displayed
+- AI/Film theme visually represented
+- Bold typography
+- Dark background with gradient accents
+- Logo placement
+
+Note: Currently using placeholder paths. Replace with actual brand assets when available.
